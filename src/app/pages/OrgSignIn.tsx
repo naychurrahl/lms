@@ -8,6 +8,7 @@ import { ApiError } from '../utils/apiBase'
 interface PublicOrganization {
   id: string
   name: string
+  selfRegistrationEnabled: boolean
 }
 
 /**
@@ -125,6 +126,15 @@ export function OrgSignIn() {
             Forgot password?
           </Link>
         </p>
+
+        {organization?.selfRegistrationEnabled && (
+          <p className="text-sm text-text-secondary">
+            New here?{' '}
+            <Link to={`/explore/${routeOrgId}/sign-up`} className="text-primary hover:underline">
+              Create an account
+            </Link>
+          </p>
+        )}
       </form>
     </div>
   )
