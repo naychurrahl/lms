@@ -2,6 +2,7 @@ import type { ReactNode } from 'react'
 import { Navigate, useParams } from 'react-router'
 import { useAuth } from '../context/AuthContext'
 import { getLastOrganization } from '../utils/lastOrganization'
+import { Landing } from '../pages/Landing'
 
 /**
  * There's no generic sign-in anymore — every entry point is
@@ -11,8 +12,8 @@ import { getLastOrganization } from '../utils/lastOrganization'
  * it bounces back to exactly that Organization's sign-in. A bare,
  * contextless visit (no :organizationId anywhere in the matched route) falls
  * back to whichever Organization this browser last actively used
- * (OrganizationContext remembers it); with neither, there's genuinely no
- * Organization to send them to — this simply says so rather than guessing.
+ * (OrganizationContext remembers it); with neither, Landing gives them an
+ * actual way to pick one instead of a dead end.
  */
 export function ProtectedRoute({ children }: { children: ReactNode }) {
   const { user, isLoading } = useAuth()
@@ -30,13 +31,7 @@ export function ProtectedRoute({ children }: { children: ReactNode }) {
       return <Navigate to={`/explore/${target}/sign-in`} replace />
     }
 
-    return (
-      <div className="flex min-h-screen items-center justify-center bg-bg p-4">
-        <p className="max-w-sm text-center text-text-secondary">
-          Use the sign-in link provided by your institution to get started.
-        </p>
-      </div>
-    )
+    return <Landing />
   }
 
   return <>{children}</>
