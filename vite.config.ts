@@ -11,6 +11,10 @@ export default defineConfig({
     },
   },
   server: {
-    port: 5173,
+    // Fixed and distinct from cms/'s port — cms/.env's VITE_FRONTEND_URL
+    // points here to build invitation links, so it can't be left to drift
+    // to whatever port happens to be free on a given restart.
+    port: 5176,
+    strictPort: true,
   },
 })
