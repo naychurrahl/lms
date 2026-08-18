@@ -1,0 +1,68 @@
+/**
+ * Design tokens from design_system.md's Base Palette and Status Color
+ * Vocabulary. This is the one file to edit for a full re-theme — every
+ * component reads colors through these custom properties, never a literal
+ * hex value. --color-primary is the one token an Organization's branding
+ * (organization_settings) is allowed to override; everything else stays
+ * fixed across every tenant, per design_system.md's Theming Model.
+ */
+
+:root {
+  --color-bg: #f7f8fa;
+  --color-surface: #ffffff;
+  --color-border: #e2e5ea;
+  --color-text-primary: #171a21;
+  --color-text-secondary: #5b6270;
+
+  --color-primary: #2e5aac;
+  --color-success: #1e8e5a;
+  --color-warning: #b5790a;
+  --color-danger: #c4392b;
+  --color-info: #3c7fb1;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #12151a;
+    --color-surface: #1b1f27;
+    --color-border: #2a2f3a;
+    --color-text-primary: #edeff3;
+    --color-text-secondary: #9ba3b4;
+
+    --color-primary: #5b8cdc;
+    --color-success: #4cc38a;
+    --color-warning: #e0a83c;
+    --color-danger: #e8695c;
+    --color-info: #6fb0de;
+  }
+}
+
+/* The viewer's own theme toggle (data-theme) always wins over the OS
+   preference above, in both directions. */
+:root[data-theme='dark'] {
+  --color-bg: #12151a;
+  --color-surface: #1b1f27;
+  --color-border: #2a2f3a;
+  --color-text-primary: #edeff3;
+  --color-text-secondary: #9ba3b4;
+
+  --color-primary: #5b8cdc;
+  --color-success: #4cc38a;
+  --color-warning: #e0a83c;
+  --color-danger: #e8695c;
+  --color-info: #6fb0de;
+}
+
+:root[data-theme='light'] {
+  --color-bg: #f7f8fa;
+  --color-surface: #ffffff;
+  --color-border: #e2e5ea;
+  --color-text-primary: #171a21;
+  --color-text-secondary: #5b6270;
+
+  --color-primary: #2e5aac;
+  --color-success: #1e8e5a;
+  --color-warning: #b5790a;
+  --color-danger: #c4392b;
+  --color-info: #3c7fb1;
+}

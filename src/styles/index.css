@@ -1,0 +1,12 @@
+@import './fonts.css';
+@import './colors.css';
+@import './theme.css';
+@import './tailwind.css';
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  margin: 0;
+}

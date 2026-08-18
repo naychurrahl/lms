@@ -1,0 +1,36 @@
+@import 'tailwindcss';
+
+/* Maps the custom properties in colors.css/theme.css onto Tailwind v4
+   utilities (bg-primary, text-danger, etc.), so components can use either
+   Tailwind classes or the raw var(--color-*) interchangeably. */
+@theme {
+  --color-bg: var(--color-bg);
+  --color-surface: var(--color-surface);
+  --color-border: var(--color-border);
+  --color-text-primary: var(--color-text-primary);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-primary: var(--color-primary);
+  --color-success: var(--color-success);
+  --color-warning: var(--color-warning);
+  --color-danger: var(--color-danger);
+  --color-info: var(--color-info);
+
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+
+  /* design_system.md's type scale, each paired with its line-height so
+     e.g. text-heading-lg carries both in one utility class. */
+  --text-display: 2rem;
+  --text-display--line-height: 2.5rem;
+  --text-heading-lg: 1.5rem;
+  --text-heading-lg--line-height: 2rem;
+  --text-heading-sm: 1.125rem;
+  --text-heading-sm--line-height: 1.625rem;
+  --text-body: 0.9375rem;
+  --text-body--line-height: 1.5rem;
+  --text-caption: 0.8125rem;
+  --text-caption--line-height: 1.125rem;
+}

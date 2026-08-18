@@ -1,0 +1,13 @@
+/**
+ * Spacing unit and radii from design_system.md. The type scale lives
+ * directly in tailwind.css's @theme block (the single source of truth for
+ * it), since Tailwind v4 needs the font-size/line-height pair defined
+ * together — duplicating it here as plain properties would just be a second
+ * place for the two to drift apart.
+ */
+:root {
+  --space-unit: 8px;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+}

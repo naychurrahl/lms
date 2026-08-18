@@ -1,0 +1,11 @@
+/**
+ * Interface face only (design_system.md). The certificate/display serif
+ * lives inside certificate_templates.design's rendering, not here — it
+ * never appears in application chrome.
+ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: ui-monospace, 'SFMono-Regular', 'Cascadia Code', Consolas, monospace;
+}
